@@ -26,6 +26,18 @@ button:focus {
     outline: none;
 }
 
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
 
 .main-header{
   display: flex;
@@ -56,13 +68,51 @@ button:focus {
 }
 
 .mobile-nav-contain {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: transform ease 2s;
+  transform: translateX(-250%);
+  opacity: .85;
+}
+
+.nav-links li {
+  list-style: none;
+  padding: 2em 0 2em 0;
+  opacity: 0;
+  text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+}
+
+.nav-links a {
+  color: #E1E5F2;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  font-size: 1.3em;
+}
+
+
+.nav-active {
+  transform: translateX(0%);
+  position: absolute;
+  height: 180vh;
+  width: 80vw;
+  background-color: rgba(46, 49, 49, .99);
 }
 
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   background-image: url('../img/hero.jpg');
